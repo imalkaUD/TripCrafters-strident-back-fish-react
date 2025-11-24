@@ -68,30 +68,34 @@ const Home = (props) => {
             />
           </p>
           <div className="cta-stack">
-            <button
-              aria-label="Start planning your custom trip"
-              className="btn-primary btn-lg btn"
-            >
-              {' '}
-              Start Planning
-              <span
-                dangerouslySetInnerHTML={{
-                  __html: ' ',
-                }}
-              />
-            </button>
-            <button
-              aria-label="Browse curated tours"
-              className="btn-outline btn-lg btn"
-            >
-              {' '}
-              Browse Tours
-              <span
-                dangerouslySetInnerHTML={{
-                  __html: ' ',
-                }}
-              />
-            </button>
+            <a href="/start-planning">
+              <button
+                aria-label="Start planning your custom trip"
+                className="btn-primary btn-lg btn"
+              >
+                {' '}
+                Start Planning
+                <span
+                  dangerouslySetInnerHTML={{
+                    __html: ' ',
+                  }}
+                />
+              </button>
+            </a>
+            <a href="/tours">
+              <button
+                aria-label="Browse curated tours"
+                className="btn-outline btn-lg btn"
+              >
+                {' '}
+                Browse Tours
+                <span
+                  dangerouslySetInnerHTML={{
+                    __html: ' ',
+                  }}
+                />
+              </button>
+            </a>
           </div>
           <div className="trust-row">
             <span className="trust-badge">
@@ -791,30 +795,34 @@ const Home = (props) => {
               }}
             />
           </p>
-          <button
-            aria-label="Book a consultation"
-            className="cta btn-primary btn-lg btn"
-          >
-            {' '}
-            Book Consultation
-            <span
-              dangerouslySetInnerHTML={{
-                __html: ' ',
-              }}
-            />
-          </button>
-          <button
-            aria-label="Request custom trip"
-            className="btn-outline cta-secondary btn"
-          >
-            {' '}
-            Request Custom Trip
-            <span
-              dangerouslySetInnerHTML={{
-                __html: ' ',
-              }}
-            />
-          </button>
+          <a href="/contact">
+            <button
+              aria-label="Book a consultation"
+              className="cta btn-primary btn-lg btn"
+            >
+              {' '}
+              Book Consultation
+              <span
+                dangerouslySetInnerHTML={{
+                  __html: ' ',
+                }}
+              />
+            </button>
+          </a>
+          <a href="/how-it-works">
+            <button
+              aria-label="Request custom trip"
+              className="btn-outline cta-secondary btn"
+            >
+              {' '}
+              Request Custom Trip
+              <span
+                dangerouslySetInnerHTML={{
+                  __html: ' ',
+                }}
+              />
+            </button>
+          </a>
           <div className="trust-anchors">
             <span className="trust-item">
               <svg
@@ -1279,30 +1287,34 @@ const Home = (props) => {
             </div>
           </div>
           <div className="pricing-cta">
-            <button
-              aria-label="Request a personalized quote"
-              className="btn-primary btn-lg btn"
-            >
-              {' '}
-              Request Quote
-              <span
-                dangerouslySetInnerHTML={{
-                  __html: ' ',
-                }}
-              />
-            </button>
-            <button
-              aria-label="Speak with an advisor"
-              className="btn-outline btn"
-            >
-              {' '}
-              Speak with Advisor
-              <span
-                dangerouslySetInnerHTML={{
-                  __html: ' ',
-                }}
-              />
-            </button>
+            <a href="/contact">
+              <button
+                aria-label="Request a personalized quote"
+                className="btn-primary btn-lg btn"
+              >
+                {' '}
+                Request Quote
+                <span
+                  dangerouslySetInnerHTML={{
+                    __html: ' ',
+                  }}
+                />
+              </button>
+            </a>
+            <a href="/contact">
+              <button
+                aria-label="Speak with an advisor"
+                className="btn-outline btn"
+              >
+                {' '}
+                Speak with Advisor
+                <span
+                  dangerouslySetInnerHTML={{
+                    __html: ' ',
+                  }}
+                />
+              </button>
+            </a>
           </div>
         </div>
       </section>
@@ -1639,30 +1651,34 @@ const Home = (props) => {
             </div>
           </div>
           <div className="partners-cta">
-            <button
-              aria-label="View all partners"
-              className="btn-primary btn-lg btn"
-            >
-              {' '}
-              View All Partners
-              <span
-                dangerouslySetInnerHTML={{
-                  __html: ' ',
-                }}
-              />
-            </button>
-            <button
-              aria-label="Request partner credentials"
-              className="btn-outline btn"
-            >
-              {' '}
-              Request Credentials
-              <span
-                dangerouslySetInnerHTML={{
-                  __html: ' ',
-                }}
-              />
-            </button>
+            <a href="/about">
+              <button
+                aria-label="View all partners"
+                className="btn-primary btn-lg btn"
+              >
+                {' '}
+                View All Partners
+                <span
+                  dangerouslySetInnerHTML={{
+                    __html: ' ',
+                  }}
+                />
+              </button>
+            </a>
+            <a href="/contact">
+              <button
+                aria-label="Request partner credentials"
+                className="btn-outline btn"
+              >
+                {' '}
+                Request Credentials
+                <span
+                  dangerouslySetInnerHTML={{
+                    __html: ' ',
+                  }}
+                />
+              </button>
+            </a>
           </div>
         </div>
       </section>

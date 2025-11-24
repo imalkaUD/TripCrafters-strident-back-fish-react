@@ -51,6 +51,11 @@ const Navigation = (props) => {
             </div>
           </a>
           <div className="navigation-menu">
+            <a href="/">
+              <div className="navigation-link">
+                <span>Home</span>
+              </div>
+            </a>
             <a href="/destinations">
               <div className="navigation-link">
                 <span>Destinations</span>
@@ -78,6 +83,14 @@ const Navigation = (props) => {
             </a>
           </div>
           <div className="navigation-actions">
+            <a href="/signin" className="auth-link signin-link">
+              <div className="navigation-link">
+                <span>Sign In</span>
+              </div>
+            </a>
+            <a href="/signup" className="btn-primary btn auth-btn signup-btn">
+              Sign Up
+            </a>
             <a href="tel:+1234567890">
               <div aria-label="Call us" className="navigation-phone">
                 <svg
@@ -97,9 +110,6 @@ const Navigation = (props) => {
                 </svg>
               </div>
             </a>
-            <button className="navigation-cta btn-primary btn">
-              Plan Your Trip
-            </button>
           </div>
           <button
             id="navigation-toggle"

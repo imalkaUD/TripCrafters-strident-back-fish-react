@@ -1,0 +1,547 @@
+/* Start Planning Page Container */
+.start-planning-container1 {
+  width: 100%;
+  display: block;
+  min-height: 100vh;
+}
+
+.start-planning-container2 {
+  display: none;
+}
+
+.start-planning-container3 {
+  display: contents;
+}
+
+.planning-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: 1fr 350px;
+  gap: 40px;
+  align-items: start;
+}
+
+/* Hero Section */
+.planning-hero {
+  width: 100%;
+  padding: 100px 20px;
+  background: linear-gradient(135deg, var(--color-surface) 0%, var(--color-surface-secondary) 100%);
+  text-align: center;
+}
+
+.planning-hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.planning-title {
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--color-on-surface);
+  margin: 0 0 16px 0;
+  line-height: 1.2;
+}
+
+.planning-subtitle {
+  font-size: 18px;
+  color: var(--color-on-surface-secondary);
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Form Section */
+.planning-form-section {
+  width: 100%;
+  padding: 60px 20px 80px;
+  background: var(--color-surface);
+}
+
+/* Form Wrapper */
+.form-wrapper {
+  background: var(--color-surface-card);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Progress Container */
+.progress-container {
+  margin-bottom: 40px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 4px;
+  background: var(--color-border);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+
+.progress-fill {
+  height: 100%;
+  background: var(--color-primary);
+  transition: width 0.3s ease;
+}
+
+.progress-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.progress-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+}
+
+.progress-step.active,
+.progress-step.completed {
+  opacity: 1;
+}
+
+.step-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--color-border);
+  color: var(--color-on-surface-secondary);
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.progress-step.active .step-number {
+  background: var(--color-primary);
+  color: white;
+}
+
+.progress-step.completed .step-number {
+  background: var(--color-primary);
+  color: white;
+  font-size: 20px;
+  content: '✓';
+}
+
+.progress-step.completed .step-number::after {
+  content: '✓';
+}
+
+.step-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-on-surface-secondary);
+  text-align: center;
+}
+
+.progress-step.active .step-label {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+/* Form Steps */
+.planning-form {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.form-step {
+  display: none;
+  animation: fadeIn 0.3s ease;
+}
+
+.form-step.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.step-title {
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--color-on-surface);
+  margin: 0 0 8px 0;
+}
+
+.step-description {
+  font-size: 15px;
+  color: var(--color-on-surface-secondary);
+  margin: 0 0 32px 0;
+  line-height: 1.6;
+}
+
+/* Form Groups */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.form-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-on-surface);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.form-input {
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-on-surface);
+  font-size: 15px;
+  font-family: inherit;
+  transition: all 0.3s ease;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(var(--color-primary-rgb), 0.1);
+}
+
+.form-input::placeholder {
+  color: var(--color-on-surface-secondary);
+}
+
+/* Interests Grid */
+.interests-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.interest-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.interest-checkbox input {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: var(--color-primary);
+}
+
+.interest-checkbox:has(input:checked) {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.interest-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-on-surface);
+  cursor: pointer;
+  user-select: none;
+}
+
+.interest-checkbox:has(input:checked) .interest-label {
+  color: white;
+}
+
+/* Schedule Info */
+.schedule-info {
+  margin-bottom: 24px;
+}
+
+.info-card {
+  padding: 20px;
+  border-radius: 8px;
+  background: var(--color-surface-secondary);
+  border: 1px solid var(--color-border);
+}
+
+.info-card h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-on-surface);
+  margin: 0 0 8px 0;
+}
+
+.info-card p {
+  font-size: 14px;
+  color: var(--color-on-surface-secondary);
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Form Navigation */
+.form-navigation {
+  display: flex;
+  gap: 16px;
+  margin-top: 40px;
+  padding-top: 24px;
+  border-top: 1px solid var(--color-border);
+}
+
+.btn {
+  padding: 12px 32px;
+  border-radius: 8px;
+  border: none;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  color: white;
+  flex: 1;
+}
+
+.btn-primary:hover:not(.disabled) {
+  background: var(--color-primary);
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+  flex: 1;
+}
+
+.btn-outline:hover:not(.disabled) {
+  background: var(--color-primary);
+  color: white;
+}
+
+.btn.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Info Sidebar */
+.planning-info-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.info-box {
+  padding: 24px;
+  border-radius: 12px;
+  background: var(--color-surface-card);
+  border: 1px solid var(--color-border);
+}
+
+.info-box h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-on-surface);
+  margin: 0 0 16px 0;
+}
+
+.info-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.info-list li {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.info-list li:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.info-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.info-list strong {
+  display: block;
+  font-size: 14px;
+  color: var(--color-on-surface);
+  margin-bottom: 4px;
+}
+
+.info-list p {
+  font-size: 13px;
+  color: var(--color-on-surface-secondary);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.benefits-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.benefits-list li {
+  font-size: 14px;
+  color: var(--color-on-surface-secondary);
+  margin-bottom: 12px;
+  padding-left: 20px;
+  position: relative;
+  line-height: 1.6;
+}
+
+.benefits-list li:last-child {
+  margin-bottom: 0;
+}
+
+.benefits-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--color-primary);
+  font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .planning-container {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .planning-info-sidebar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .planning-title {
+    font-size: 36px;
+  }
+
+  .planning-subtitle {
+    font-size: 16px;
+  }
+
+  .form-wrapper {
+    padding: 24px;
+  }
+
+  .progress-steps {
+    gap: 12px;
+  }
+
+  .step-label {
+    font-size: 11px;
+  }
+
+  .step-title {
+    font-size: 22px;
+  }
+
+  .interests-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .planning-info-sidebar {
+    grid-template-columns: 1fr;
+  }
+
+  .form-navigation {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .btn {
+    padding: 10px 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .planning-form-section {
+    padding: 40px 16px 60px;
+  }
+
+  .planning-title {
+    font-size: 28px;
+  }
+
+  .form-wrapper {
+    padding: 16px;
+  }
+
+  .progress-step {
+    gap: 4px;
+  }
+
+  .step-number {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+  }
+
+  .step-label {
+    font-size: 10px;
+  }
+
+  .step-title {
+    font-size: 20px;
+    margin-bottom: 12px;
+  }
+
+  .step-description {
+    font-size: 14px;
+    margin-bottom: 24px;
+  }
+
+  .info-box {
+    padding: 16px;
+  }
+
+  .info-box h3 {
+    font-size: 16px;
+  }
+}
