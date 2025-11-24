@@ -99,3 +99,22 @@
   font-weight: 500;
   line-height: 24px;
 }
+
+/* Process Image Styles */
+.process-image {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  margin: 30px auto;
+  display: block;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .process-image {
+    max-width: 100%;
+    margin: 20px auto;
+  }
+}

@@ -181,7 +181,7 @@ const Home = (props) => {
         <div className="hero-right">
           <div
             role="img"
-            aria-label="Luxury tropical resort with overwater bungalows"
+            aria-label="Towering gray limestone rock formations rise dramatically from a forested gorge in a steep valley. Hundreds of pointed stone pillars stretch upward, creating a striking maze-like landscape. A modern metal suspension bridge with railings spans across the canyon, connecting the rocky formations. Lush green vegetation and trees cover the surrounding hillsides. Mountains fade into misty horizons in the background. The scene evokes a sense of adventure, natural wonder, and majestic grandeur."
             className="hero-photo"
           ></div>
           <div className="hero-card">
@@ -327,7 +327,7 @@ const Home = (props) => {
               <p id="feature-1-desc" className="feature-description">
                 {' '}
                 Every itinerary is crafted with vetted local partners and
-                TripCrafters&apos; travel specialists, so you get authentic
+                TripCrafters' travel specialists, so you get authentic
                 experiences backed by verified safety, quality, and local
                 insight.
                 <span
