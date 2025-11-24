@@ -23,7 +23,7 @@ const Navigation = (props) => {
       </div>
       <nav id="navigation-main" className="navigation">
         <div className="navigation-container">
-          <a href="#homepage">
+          <a href="/">
             <div
               aria-label="TripCrafters - Homepage"
               className="navigation-logo"
@@ -51,7 +51,7 @@ const Navigation = (props) => {
             </div>
           </a>
           <div className="navigation-menu">
-            <a href="#destinations">
+            <a href="/destinations">
               <div className="navigation-link">
                 <span>Destinations</span>
               </div>
