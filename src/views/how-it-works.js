@@ -164,12 +164,16 @@ const HowItWorks = (props) => {
               Start your journey with TripCrafters today. Our team is ready to create unforgettable memories.
             </p>
             <div className="cta-buttons">
-              <button className="btn-primary btn-lg btn">
-                Start Planning Now
-              </button>
-              <button className="btn-outline btn-lg btn">
-                Browse Curated Tours
-              </button>
+              <a href="/start-planning">
+                <button className="btn-primary btn-lg btn">
+                  Start Planning Now
+                </button>
+              </a>
+              <a href="/tours">
+                <button className="btn-outline btn-lg btn">
+                  Browse Curated Tours
+                </button>
+              </a>
             </div>
           </div>
         </div>

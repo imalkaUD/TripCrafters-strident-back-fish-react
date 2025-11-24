@@ -44,3 +44,64 @@
 .navigation-container7 {
   display: contents;
 }
+
+/* Auth Buttons Styles */
+.navigation-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.auth-link {
+  text-decoration: none;
+}
+
+.signin-link .navigation-link {
+  color: var(--color-primary, #0066cc);
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.signin-link .navigation-link:hover {
+  background: rgba(0, 102, 204, 0.1);
+}
+
+.auth-btn.signup-btn {
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.auth-btn.signup-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.navigation-phone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary, #0066cc);
+  transition: all 0.3s ease;
+}
+
+.navigation-phone:hover {
+  opacity: 0.7;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .navigation-actions {
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .auth-btn.signup-btn {
+    width: 100%;
+  }
+}
+
