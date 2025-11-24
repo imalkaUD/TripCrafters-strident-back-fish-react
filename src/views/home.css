@@ -99,3 +99,19 @@
   font-weight: 500;
   line-height: 24px;
 }
+
+/* Process Diagram Styles */
+.process-diagram {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  margin: 40px auto 30px;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .process-diagram {
+    max-width: 100%;
+    margin: 30px auto 20px;
+  }
+}
