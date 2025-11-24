@@ -56,22 +56,22 @@ const Navigation = (props) => {
                 <span>Destinations</span>
               </div>
             </a>
-            <a href="#tours">
+            <a href="/tours">
               <div className="navigation-link">
                 <span>Tours</span>
               </div>
             </a>
-            <a href="#how-it-works">
+            <a href="/how-it-works">
               <div className="navigation-link">
                 <span>How It Works</span>
               </div>
             </a>
-            <a href="#about">
+            <a href="/about">
               <div className="navigation-link">
                 <span>About</span>
               </div>
             </a>
-            <a href="#contact">
+            <a href="/contact">
               <div className="navigation-link">
                 <span>Contact</span>
               </div>
