@@ -578,64 +578,6 @@ const Home = (props) => {
             <p className="section-subtitle">
               Expertly Crafted, Reliably Delivered
             </p>
-            <svg className="process-diagram" viewBox="0 0 600 120" xmlns="http://www.w3.org/2000/svg" aria-label="Six-step travel planning process: Discovery leading to Custom Planning leading to Refinement and Approval, which connects to Booking and Coordination, Real-Time Support, and Post-Trip Care">
-              <defs>
-                <linearGradient id="processGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" style={{stopColor: '#0066cc', stopOpacity: 1}} />
-                  <stop offset="100%" style={{stopColor: '#00b4d8', stopOpacity: 1}} />
-                </linearGradient>
-              </defs>
-              
-              {/* Step 1: Discovery */}
-              <circle cx="60" cy="60" r="18" fill="#0066cc"/>
-              <text x="60" y="65" textAnchor="middle" fontSize="24" fill="white" fontWeight="bold">1</text>
-              <text x="60" y="90" textAnchor="middle" fontSize="12" fill="#333" fontWeight="600">Discovery</text>
-              
-              {/* Arrow 1 */}
-              <line x1="78" y1="60" x2="115" y2="60" stroke="url(#processGradient)" strokeWidth="3"/>
-              <polygon points="120,60 115,55 115,65" fill="url(#processGradient)"/>
-              
-              {/* Step 2: Custom Planning */}
-              <circle cx="145" cy="60" r="18" fill="#0099dd"/>
-              <text x="145" y="65" textAnchor="middle" fontSize="24" fill="white" fontWeight="bold">2</text>
-              <text x="145" y="90" textAnchor="middle" fontSize="12" fill="#333" fontWeight="600">Planning</text>
-              
-              {/* Arrow 2 */}
-              <line x1="163" y1="60" x2="200" y2="60" stroke="url(#processGradient)" strokeWidth="3"/>
-              <polygon points="205,60 200,55 200,65" fill="url(#processGradient)"/>
-              
-              {/* Step 3: Refinement */}
-              <circle cx="230" cy="60" r="18" fill="#00b4d8"/>
-              <text x="230" y="65" textAnchor="middle" fontSize="24" fill="white" fontWeight="bold">3</text>
-              <text x="230" y="90" textAnchor="middle" fontSize="12" fill="#333" fontWeight="600">Refinement</text>
-              
-              {/* Arrow 3 */}
-              <line x1="248" y1="60" x2="285" y2="60" stroke="url(#processGradient)" strokeWidth="3"/>
-              <polygon points="290,60 285,55 285,65" fill="url(#processGradient)"/>
-              
-              {/* Step 4: Booking */}
-              <circle cx="315" cy="60" r="18" fill="#0066cc"/>
-              <text x="315" y="65" textAnchor="middle" fontSize="24" fill="white" fontWeight="bold">4</text>
-              <text x="315" y="90" textAnchor="middle" fontSize="12" fill="#333" fontWeight="600">Booking</text>
-              
-              {/* Arrow 4 */}
-              <line x1="333" y1="60" x2="370" y2="60" stroke="url(#processGradient)" strokeWidth="3"/>
-              <polygon points="375,60 370,55 370,65" fill="url(#processGradient)"/>
-              
-              {/* Step 5: Support */}
-              <circle cx="400" cy="60" r="18" fill="#0099dd"/>
-              <text x="400" y="65" textAnchor="middle" fontSize="24" fill="white" fontWeight="bold">5</text>
-              <text x="400" y="90" textAnchor="middle" fontSize="12" fill="#333" fontWeight="600">Support</text>
-              
-              {/* Arrow 5 */}
-              <line x1="418" y1="60" x2="455" y2="60" stroke="url(#processGradient)" strokeWidth="3"/>
-              <polygon points="460,60 455,55 455,65" fill="url(#processGradient)"/>
-              
-              {/* Step 6: Post-Trip */}
-              <circle cx="485" cy="60" r="18" fill="#00b4d8"/>
-              <text x="485" y="65" textAnchor="middle" fontSize="24" fill="white" fontWeight="bold">6</text>
-              <text x="485" y="90" textAnchor="middle" fontSize="12" fill="#333" fontWeight="600">Post-Trip</text>
-            </svg>
           </div>
           <div className="process-column milestone-column">
             <div
