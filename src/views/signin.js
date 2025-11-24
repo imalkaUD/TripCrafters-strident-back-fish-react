@@ -6,6 +6,8 @@ import Navigation from '../components/navigation'
 import Footer from '../components/footer'
 import './signin.css'
 
+const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000/api'
+
 const SignIn = (props) => {
   const [formData, setFormData] = useState({
     email: '',
@@ -13,7 +15,9 @@ const SignIn = (props) => {
     rememberMe: false
   })
 
+  const [errors, setErrors] = useState({})
   const [submitted, setSubmitted] = useState(false)
+  const [loading, setLoading] = useState(false)
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target
@@ -21,17 +25,60 @@ const SignIn = (props) => {
       ...prev,
       [name]: type === 'checkbox' ? checked : value
     }))
+    if (errors[name]) {
+      setErrors(prev => ({
+        ...prev,
+        [name]: ''
+      }))
+    }
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    console.log('Sign In Form:', formData)
-    setSubmitted(true)
-    setTimeout(() => {
-      alert('Welcome back! You have successfully signed in.')
-      setFormData({ email: '', password: '', rememberMe: false })
-      setSubmitted(false)
-    }, 1500)
+
+    // Validate
+    if (!formData.email || !formData.password) {
+      setErrors({ form: 'Please provide email and password' })
+      return
+    }
+
+    setLoading(true)
+
+    try {
+      const response = await fetch(`${API_URL}/auth/signin`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email: formData.email,
+          password: formData.password,
+        }),
+      })
+
+      const data = await response.json()
+
+      if (!response.ok) {
+        throw new Error(data.message || 'Sign in failed')
+      }
+
+      // Save token and user info to localStorage
+      localStorage.setItem('authToken', data.token)
+      localStorage.setItem('user', JSON.stringify(data.user))
+
+      if (formData.rememberMe) {
+        localStorage.setItem('rememberMe', 'true')
+      }
+
+      setSubmitted(true)
+      setTimeout(() => {
+        // Redirect to home or dashboard
+        window.location.href = '/'
+      }, 1500)
+    } catch (error) {
+      setErrors({ form: error.message })
+      setLoading(false)
+    }
   }
 
   return (
@@ -114,8 +161,14 @@ const SignIn = (props) => {
                   <a href="#forgot" className="forgot-link">Forgot password?</a>
                 </div>
 
-                <button type="submit" className="btn-primary btn-lg btn signin-btn">
-                  Sign In
+                {errors.form && <div className="form-error-banner">{errors.form}</div>}
+
+                <button 
+                  type="submit" 
+                  className="btn-primary btn-lg btn signin-btn"
+                  disabled={loading}
+                >
+                  {loading ? 'Signing In...' : 'Sign In'}
                 </button>
 
                 <div className="signin-divider">

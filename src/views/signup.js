@@ -6,6 +6,8 @@ import Navigation from '../components/navigation'
 import Footer from '../components/footer'
 import './signup.css'
 
+const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000/api'
+
 const SignUp = (props) => {
   const [formData, setFormData] = useState({
     firstName: '',
@@ -18,6 +20,7 @@ const SignUp = (props) => {
 
   const [errors, setErrors] = useState({})
   const [submitted, setSubmitted] = useState(false)
+  const [loading, setLoading] = useState(false)
 
   const validateForm = () => {
     const newErrors = {}
@@ -70,27 +73,49 @@ const SignUp = (props) => {
     }
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
 
     if (!validateForm()) {
       return
     }
 
-    console.log('Sign Up Form:', formData)
-    setSubmitted(true)
-    setTimeout(() => {
-      alert('Account created successfully! Welcome to TripCrafters.')
-      setFormData({
-        firstName: '',
-        lastName: '',
-        email: '',
-        password: '',
-        confirmPassword: '',
-        agreedToTerms: false
+    setLoading(true)
+
+    try {
+      const response = await fetch(`${API_URL}/auth/signup`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          firstName: formData.firstName,
+          lastName: formData.lastName,
+          email: formData.email,
+          password: formData.password,
+          confirmPassword: formData.confirmPassword,
+        }),
       })
-      setSubmitted(false)
-    }, 1500)
+
+      const data = await response.json()
+
+      if (!response.ok) {
+        throw new Error(data.message || 'Sign up failed')
+      }
+
+      // Save token to localStorage
+      localStorage.setItem('authToken', data.token)
+      localStorage.setItem('user', JSON.stringify(data.user))
+
+      setSubmitted(true)
+      setTimeout(() => {
+        // Redirect to start planning or home
+        window.location.href = '/start-planning'
+      }, 1500)
+    } catch (error) {
+      setErrors({ form: error.message })
+      setLoading(false)
+    }
   }
 
   return (
@@ -252,7 +277,14 @@ const SignUp = (props) => {
                   {errors.agreedToTerms && <span className="error-text">{errors.agreedToTerms}</span>}
                 </div>
 
-                <button type="submit" className="btn-primary btn-lg btn signup-btn">
+                {errors.form && <div className="form-error-banner">{errors.form}</div>}
+
+                <button 
+                  type="submit" 
+                  className="btn-primary btn-lg btn signup-btn"
+                  disabled={loading}
+                >
+                  {loading ? 'Creating Account...' : 'Create Account'}
                   Create Account
                 </button>
 

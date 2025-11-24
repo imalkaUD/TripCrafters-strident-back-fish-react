@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Script from 'dangerous-html/react'
 import { Helmet } from 'react-helmet'
 
@@ -6,8 +6,13 @@ import Navigation from '../components/navigation'
 import Footer from '../components/footer'
 import './start-planning.css'
 
+const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000/api'
+
 const StartPlanning = (props) => {
   const [currentStep, setCurrentStep] = useState(1)
+  const [authToken, setAuthToken] = useState(null)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
   const [formData, setFormData] = useState({
     destination: '',
     duration: '',
@@ -30,6 +35,17 @@ const StartPlanning = (props) => {
     'Shopping & Fashion',
     'Nightlife & Entertainment'
   ]
+
+  useEffect(() => {
+    // Check if user is logged in
+    const token = localStorage.getItem('authToken')
+    if (!token) {
+      // Redirect to signup if not authenticated
+      window.location.href = '/signup'
+    } else {
+      setAuthToken(token)
+    }
+  }, [])
 
   const handleInputChange = (e) => {
     const { name, value } = e.target
@@ -60,23 +76,74 @@ const StartPlanning = (props) => {
     }
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    console.log('Trip Planning Form Submitted:', formData)
-    alert('Thank you for starting your trip planning! Our team will contact you shortly to discuss your preferences.')
-    // Reset form
-    setCurrentStep(1)
-    setFormData({
-      destination: '',
-      duration: '',
-      travelers: '',
-      budget: '',
-      interests: [],
-      travelDate: '',
-      name: '',
-      email: '',
-      phone: ''
-    })
+    
+    if (!authToken) {
+      setError('Please sign in to submit your trip plan')
+      return
+    }
+
+    setLoading(true)
+    setError('')
+
+    try {
+      const tripPlanData = {
+        tripDetails: {
+          destination: formData.destination,
+          duration: parseInt(formData.duration),
+          numberOfTravelers: parseInt(formData.travelers)
+        },
+        preferences: {
+          interests: formData.interests,
+          budget: formData.budget
+        },
+        schedule: {
+          startDate: formData.travelDate
+        },
+        contactInfo: {
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone
+        }
+      }
+
+      const response = await fetch(`${API_URL}/tripplans`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${authToken}`
+        },
+        body: JSON.stringify(tripPlanData)
+      })
+
+      const data = await response.json()
+
+      if (!response.ok) {
+        throw new Error(data.message || 'Failed to save trip plan')
+      }
+
+      // Show success message
+      alert('Thank you! Your trip plan has been saved successfully. Our team will contact you shortly.')
+      
+      // Reset form
+      setCurrentStep(1)
+      setFormData({
+        destination: '',
+        duration: '',
+        travelers: '',
+        budget: '',
+        interests: [],
+        travelDate: '',
+        name: '',
+        email: '',
+        phone: ''
+      })
+      setLoading(false)
+    } catch (err) {
+      setError(err.message)
+      setLoading(false)
+    }
   }
 
   return (
