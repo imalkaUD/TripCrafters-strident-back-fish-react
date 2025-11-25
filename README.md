@@ -236,6 +236,21 @@ For issues or questions, refer to:
 5. Ensure both frontend and backend ports are available
 
 ---
+<img width="1864" height="885" alt="Screenshot (585)" src="https://github.com/user-attachments/assets/0ca7a33d-8677-494b-8817-913390b4313b" />
 
-**Last Updated:** November 24, 2025
+<img width="1864" height="888" alt="Screenshot (584)" src="https://github.com/user-attachments/assets/f4805750-4426-4c96-b785-2d8887f5a2bf" />
+
+<img width="1855" height="885" alt="Screenshot (577)" src="https://github.com/user-attachments/assets/515d3bcc-96ab-49cd-86f2-884dba89a5d3" />
+
+<img width="1855" height="886" alt="Screenshot (578)" src="https://github.com/user-attachments/assets/a8bdb242-23aa-4b87-9a08-9651edd9bce8" />
+
+<img width="1831" height="877" alt="Screenshot (581)" src="https://github.com/user-attachments/assets/648546f7-126c-4ec6-98b4-073ecf9b7cfb" />
+
+<img width="1837" height="871" alt="Screenshot (579)" src="https://github.com/user-attachments/assets/10f341f0-812f-4d5b-81a0-d32c9ed54157" />
+
+<img width="1851" height="885" alt="Screenshot (580)" src="https://github.com/user-attachments/assets/41c067f2-840b-4510-8f36-9ada7bd0193d" />
+
+
+**Last Updated:** November 25, 2025
 **Status:** ✅ Ready for development and deployment
+
