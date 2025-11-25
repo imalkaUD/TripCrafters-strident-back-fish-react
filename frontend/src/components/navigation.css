@@ -105,3 +105,29 @@
   }
 }
 
+/* Active NavLink Styles */
+.navigation-menu a.active .navigation-link {
+  color: var(--color-primary, #16a34a);
+  font-weight: 700;
+  border-bottom: 3px solid var(--color-primary, #16a34a);
+  padding-bottom: 5px;
+}
+
+.navigation-menu a.active .navigation-link span {
+  color: var(--color-primary, #16a34a);
+}
+
+.navigation-menu a {
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.navigation-menu a .navigation-link {
+  transition: all 0.3s ease;
+  padding-bottom: 8px;
+}
+
+.navigation-menu a:hover .navigation-link {
+  color: var(--color-primary, #16a34a);
+  opacity: 0.8;
+}

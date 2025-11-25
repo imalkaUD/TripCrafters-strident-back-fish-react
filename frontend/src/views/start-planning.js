@@ -88,11 +88,34 @@ const StartPlanning = (props) => {
     setError('')
 
     try {
+      // Validate form data
+      if (!formData.destination || !formData.duration || !formData.travelers || !formData.budget) {
+        setError('Please fill in all trip details')
+        setLoading(false)
+        return
+      }
+
+      if (formData.interests.length === 0) {
+        setError('Please select at least one interest')
+        setLoading(false)
+        return
+      }
+
+      if (!formData.travelDate || !formData.name || !formData.email || !formData.phone) {
+        setError('Please fill in all contact information')
+        setLoading(false)
+        return
+      }
+
+      // Extract numeric value from duration (e.g., "3-5" -> 5)
+      const durationValue = formData.duration.split('-')[1] || formData.duration.split('+')[0] || formData.duration
+      const travelerValue = formData.travelers === '' ? 1 : parseInt(formData.travelers)
+
       const tripPlanData = {
         tripDetails: {
           destination: formData.destination,
-          duration: parseInt(formData.duration),
-          numberOfTravelers: parseInt(formData.travelers)
+          duration: parseInt(durationValue) || 5,
+          numberOfTravelers: travelerValue
         },
         preferences: {
           interests: formData.interests,
@@ -210,6 +233,12 @@ const StartPlanning = (props) => {
             </div>
 
             <form onSubmit={handleSubmit} className="planning-form">
+              {error && (
+                <div className="error-banner" style={{ backgroundColor: '#fee', borderLeft: '4px solid #f00', padding: '12px', marginBottom: '20px', borderRadius: '4px', color: '#c00' }}>
+                  {error}
+                </div>
+              )}
+
               {/* Step 1: Trip Details */}
               {currentStep === 1 && (
                 <div className="form-step active">
@@ -299,10 +328,9 @@ const StartPlanning = (props) => {
                       className="form-input"
                     >
                       <option value="">Select budget range</option>
-                      <option value="under-2000">Under $2,000</option>
-                      <option value="2000-5000">$2,000 - $5,000</option>
-                      <option value="5000-10000">$5,000 - $10,000</option>
-                      <option value="10000+">$10,000+</option>
+                      <option value="Budget">Budget ($2,000 - $5,000)</option>
+                      <option value="Mid-Range">Mid-Range ($5,000 - $10,000)</option>
+                      <option value="Luxury">Luxury ($10,000+)</option>
                     </select>
                   </div>
                 </div>
@@ -315,16 +343,15 @@ const StartPlanning = (props) => {
                   <p className="step-description">Help us find the perfect time for your trip</p>
 
                   <div className="form-group">
-                    <label htmlFor="travelDate" className="form-label">Preferred Travel Date (or Month) *</label>
+                    <label htmlFor="travelDate" className="form-label">Preferred Travel Date *</label>
                     <input
-                      type="text"
+                      type="date"
                       id="travelDate"
                       name="travelDate"
                       value={formData.travelDate}
                       onChange={handleInputChange}
                       required
                       className="form-input"
-                      placeholder="e.g., March 2024, Spring, Flexible"
                     />
                   </div>
 
@@ -410,8 +437,9 @@ const StartPlanning = (props) => {
                   <button
                     type="submit"
                     className="btn btn-primary"
+                    disabled={loading}
                   >
-                    Submit & Get Started
+                    {loading ? 'Submitting...' : 'Submit & Get Started'}
                   </button>
                 )}
               </div>

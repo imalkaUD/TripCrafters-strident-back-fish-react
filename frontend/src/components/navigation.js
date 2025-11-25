@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 import Script from 'dangerous-html/react'
 
@@ -23,7 +24,7 @@ const Navigation = (props) => {
       </div>
       <nav id="navigation-main" className="navigation">
         <div className="navigation-container">
-          <a href="/">
+          <NavLink to="/">
             <div
               aria-label="TripCrafters - Homepage"
               className="navigation-logo"
@@ -49,38 +50,38 @@ const Navigation = (props) => {
               </div>
               <span className="navigation-logo-text">TripCrafters</span>
             </div>
-          </a>
+          </NavLink>
           <div className="navigation-menu">
-            <a href="/">
+            <NavLink exact to="/">
               <div className="navigation-link">
                 <span>Home</span>
               </div>
-            </a>
-            <a href="/destinations">
+            </NavLink>
+            <NavLink exact to="/destinations">
               <div className="navigation-link">
                 <span>Destinations</span>
               </div>
-            </a>
-            <a href="/tours">
+            </NavLink>
+            <NavLink exact to="/tours">
               <div className="navigation-link">
                 <span>Tours</span>
               </div>
-            </a>
-            <a href="/how-it-works">
+            </NavLink>
+            <NavLink exact to="/how-it-works">
               <div className="navigation-link">
                 <span>How It Works</span>
               </div>
-            </a>
-            <a href="/about">
+            </NavLink>
+            <NavLink exact to="/about">
               <div className="navigation-link">
                 <span>About</span>
               </div>
-            </a>
-            <a href="/contact">
+            </NavLink>
+            <NavLink exact to="/contact">
               <div className="navigation-link">
                 <span>Contact</span>
               </div>
-            </a>
+            </NavLink>
           </div>
           <div className="navigation-actions">
             <a href="/signin" className="auth-link signin-link">

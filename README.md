@@ -20,7 +20,6 @@ TripCrafters/
 │   │   ├── components/
 │   │   │   ├── navigation.js
 │   │   │   └── footer.js
-│   │   ├── images/             # Static images
 │   │   ├── index.js            # React Router setup
 │   │   ├── style.css           # Global styles
 │   │   └── ...

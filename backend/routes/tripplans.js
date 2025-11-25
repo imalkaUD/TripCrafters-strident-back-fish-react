@@ -8,6 +8,9 @@ router.post('/', protect, async (req, res) => {
   try {
     const { tripDetails, preferences, schedule, contactInfo } = req.body
 
+    console.log('Received tripPlan request:', JSON.stringify(req.body, null, 2))
+    console.log('User ID:', req.user.id)
+
     // Validate input
     if (!tripDetails || !preferences || !schedule || !contactInfo) {
       return res.status(400).json({ message: 'Please provide all required fields' })
@@ -21,6 +24,8 @@ router.post('/', protect, async (req, res) => {
       contactInfo,
     })
 
+    console.log('Saving trip plan:', JSON.stringify(tripPlan, null, 2))
+
     await tripPlan.save()
 
     res.status(201).json({
@@ -28,6 +33,7 @@ router.post('/', protect, async (req, res) => {
       tripPlan,
     })
   } catch (error) {
+    console.error('Error creating trip plan:', error)
     res.status(500).json({ message: 'Error creating trip plan', error: error.message })
   }
 })
