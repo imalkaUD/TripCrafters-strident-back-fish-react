@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Script from 'dangerous-html/react'
 import { Helmet } from 'react-helmet'
+import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaClock } from 'react-icons/fa'
 
 import Navigation from '../components/navigation'
 import Footer from '../components/footer'
@@ -39,19 +40,19 @@ const Contact = (props) => {
 
   const contactInfo = [
     {
-      icon: '📞',
+      icon: <FaPhone size={32} color="#16a34a" />,
       title: 'Call Us',
       content: '+1 (555) 123-4567',
       subtext: 'Available 24/7'
     },
     {
-      icon: '✉️',
+      icon: <FaEnvelope size={32} color="#16a34a" />,
       title: 'Email Us',
       content: 'hello@tripcrafters.com',
       subtext: 'We reply within 2 hours'
     },
     {
-      icon: '📍',
+      icon: <FaMapMarkerAlt size={32} color="#16a34a" />,
       title: 'Visit Us',
       content: '123 Travel Lane, Adventure City, AC 12345',
       subtext: 'Open Mon-Fri, 9am-6pm'
