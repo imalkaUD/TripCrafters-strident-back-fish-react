@@ -1,48 +1,58 @@
 import React from 'react'
 import Script from 'dangerous-html/react'
 import { Helmet } from 'react-helmet'
+import { FaComments, FaListUl, FaMoneyBillWave, FaPlane, FaHeadset, FaSmile } from 'react-icons/fa'
 
 import Navigation from '../components/navigation'
 import Footer from '../components/footer'
 import './how-it-works.css'
 
 const HowItWorks = (props) => {
+  const iconMap = {
+    tell: <FaComments size={24} color="#16a34a" />,
+    plan: <FaListUl size={24} color="#16a34a" />,
+    price: <FaMoneyBillWave size={24} color="#16a34a" />,
+    book: <FaPlane size={24} color="#16a34a" />,
+    support: <FaHeadset size={24} color="#16a34a" />,
+    enjoy: <FaSmile size={24} color="#16a34a" />
+  }
+
   const steps = [
     {
       number: 1,
       title: 'Tell Us Your Vision',
       description: 'Share your travel dreams, preferences, budget, and any special requirements. Our team listens and learns what makes your ideal journey.',
-      icon: '💭'
+      icon: iconMap.tell
     },
     {
       number: 2,
       title: 'Expert Planning',
       description: 'Our travel experts craft a custom itinerary tailored to your interests. We leverage vetted local partners for authentic experiences.',
-      icon: '📋'
+      icon: iconMap.plan
     },
     {
       number: 3,
       title: 'Transparent Pricing',
       description: 'Get detailed pricing breakdown with no hidden fees. See exactly where your investment goes and compare options.',
-      icon: '💰'
+      icon: iconMap.price
     },
     {
       number: 4,
       title: 'Book & Prepare',
       description: 'Confirm your itinerary and complete booking. We provide detailed preparation guides, packing lists, and travel documentation.',
-      icon: '✈️'
+      icon: iconMap.book
     },
     {
       number: 5,
       title: '24/7 Support',
       description: 'Get a dedicated travel manager available round the clock. Any changes or emergencies? We handle it instantly.',
-      icon: '🎧'
+      icon: iconMap.support
     },
     {
       number: 6,
       title: 'Enjoy & Remember',
       description: 'Experience your dream journey with confidence. We stay connected to ensure everything runs smoothly from start to finish.',
-      icon: '🎉'
+      icon: iconMap.enjoy
     }
   ]
 
