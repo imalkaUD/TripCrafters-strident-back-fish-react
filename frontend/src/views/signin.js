@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
 import Script from 'dangerous-html/react'
 import { Helmet } from 'react-helmet'
-import { FaGoogle, FaFacebookF } from 'react-icons/fa'
-import { MdMyLocation, MdAttachMoney, MdFlight, MdHandshake } from 'react-icons/md'
+import { FaGoogle, FaFacebookF, FaMapMarkerAlt, FaSave, FaPlane, FaHandshake } from 'react-icons/fa'
 
 import Navigation from '../components/navigation'
 import Footer from '../components/footer'
@@ -199,28 +198,28 @@ const SignIn = (props) => {
             <h2>Why Sign In?</h2>
             <ul className="benefits-list">
               <li>
-                <span className="benefit-icon"><MdMyLocation size={32} color="#16a34a" /></span>
+                <span className="benefit-icon"><FaMapMarkerAlt size={32} color="#16a34a" /></span>
                 <div>
                   <h3>Track Your Trips</h3>
                   <p>View all your bookings and itineraries in one place</p>
                 </div>
               </li>
               <li>
-                <span className="benefit-icon"><MdAttachMoney size={32} color="#16a34a" /></span>
+                <span className="benefit-icon"><FaSave size={32} color="#16a34a" /></span>
                 <div>
                   <h3>Save Preferences</h3>
                   <p>Store your travel preferences for faster planning</p>
                 </div>
               </li>
               <li>
-                <span className="benefit-icon"><MdFlight size={32} color="#16a34a" /></span>
+                <span className="benefit-icon"><FaPlane size={32} color="#16a34a" /></span>
                 <div>
                   <h3>Exclusive Offers</h3>
                   <p>Get member-only deals and early access to new tours</p>
                 </div>
               </li>
               <li>
-                <span className="benefit-icon"><MdHandshake size={32} color="#16a34a" /></span>
+                <span className="benefit-icon"><FaHandshake size={32} color="#16a34a" /></span>
                 <div>
                   <h3>Dedicated Support</h3>
                   <p>Priority support from our travel experts</p>

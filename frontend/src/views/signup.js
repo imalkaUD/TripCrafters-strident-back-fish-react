@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
 import Script from 'dangerous-html/react'
 import { Helmet } from 'react-helmet'
-import { FaGoogle, FaFacebookF } from 'react-icons/fa'
-import { MdPublic, MdLocalOffer, MdAirplanemodeActive, MdGiftCard } from 'react-icons/md'
+import { FaGoogle, FaFacebookF, FaGlobe, FaTag, FaPlane, FaGift } from 'react-icons/fa'
 
 import Navigation from '../components/navigation'
 import Footer from '../components/footer'
@@ -149,28 +148,28 @@ const SignUp = (props) => {
             <h2>Join TripCrafters Today</h2>
             <ul className="benefits-list">
               <li>
-                <span className="benefit-icon"><MdPublic size={32} color="#16a34a" /></span>
+                <span className="benefit-icon"><FaGlobe size={32} color="#16a34a" /></span>
                 <div>
                   <h3>Explore 50+ Destinations</h3>
                   <p>Access our curated collection of travel experiences</p>
                 </div>
               </li>
               <li>
-                <span className="benefit-icon"><MdLocalOffer size={32} color="#16a34a" /></span>
+                <span className="benefit-icon"><FaTag size={32} color="#16a34a" /></span>
                 <div>
                   <h3>Exclusive Member Prices</h3>
                   <p>Save up to 30% on tours and accommodations</p>
                 </div>
               </li>
               <li>
-                <span className="benefit-icon"><MdAirplanemodeActive size={32} color="#16a34a" /></span>
+                <span className="benefit-icon"><FaPlane size={32} color="#16a34a" /></span>
                 <div>
                   <h3>Custom Trip Planning</h3>
                   <p>Work with our experts to design your perfect trip</p>
                 </div>
               </li>
               <li>
-                <span className="benefit-icon"><MdGiftCard size={32} color="#16a34a" /></span>
+                <span className="benefit-icon"><FaGift size={32} color="#16a34a" /></span>
                 <div>
                   <h3>Loyalty Rewards</h3>
                   <p>Earn points on every booking and redeem them</p>
