@@ -286,7 +286,7 @@ const SignUp = (props) => {
                   disabled={loading}
                 >
                   {loading ? 'Creating Account...' : 'Create Account'}
-                  Create Account
+                  
                 </button>
 
                 <div className="signup-divider">
